@@ -6,6 +6,7 @@ const pkg = require("./package.json");
 const { WatchIgnorePlugin } = require("webpack");
 const WebpackNotifierPlugin = require("webpack-notifier");
 const BUILD_DIR = abs("build");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 function abs(...args) {
   return path.resolve(__dirname, ...args);
@@ -13,6 +14,8 @@ function abs(...args) {
 
 module.exports = (env = {}, argv = {}) => {
   const cssLoaders = [MiniCssExtractPlugin.loader, "css-loader"];
+
+  console.log("argv", argv);
 
   if (argv.mode === "production") {
     cssLoaders.push({
@@ -38,7 +41,7 @@ module.exports = (env = {}, argv = {}) => {
     output: {
       filename: "[name].js",
       path: BUILD_DIR,
-      publicPath: "/static/build",
+      publicPath: BUILD_DIR,
     },
     module: {
       rules: [
@@ -94,16 +97,23 @@ module.exports = (env = {}, argv = {}) => {
     watchOptions: {
       aggregateTimeout: 600,
     },
-    /**
-     * Если задан mode, то devtool устанавливается в eval автоматически и
-     * пропадает возможность использовать SourceMapDevToolPlugin. Решить эту
-     * проблему удалось установкой значения devtool в false. И хотя в
-     * документации ничего об этом я не нашел, там же указан тип значения
-     * этого свойства как string | boolean.
-     */
     devtool: false,
+    devServer: {
+      contentBase: BUILD_DIR,
+      compress: true,
+      port: 9000,
+      hot: true,
+      open: true,
+      writeToDisk: true,
+    },
     plugins: [
-      new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        title: "react-redux-saga",
+        template: "./index.html",
+      }),
+      new CleanWebpackPlugin({
+        cleanStaleWebpackAssets: false,
+      }),
       new SourceMapDevToolPlugin({
         filename: "[file].map",
         test: /\.js$/,

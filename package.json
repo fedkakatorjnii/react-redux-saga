@@ -9,7 +9,8 @@
     "watch": "webpack --config=webpack.config.js --mode=development --watch",
     "build:ts": "tsc || true",
     "watch:ts": "tsc -w",
-    "test": "jest --watch --maxWorkers=1"
+    "test": "jest --watch --maxWorkers=1",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "@types/react": "^17.0.0",
@@ -25,11 +26,13 @@
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@types/jest": "^26.0.0",
+    "@webpack-cli/serve": "^1.1.0",
     "autoprefixer": "^9.4.10",
     "babel-jest": "^26.3.0",
     "clean-webpack-plugin": "^2.0.0",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^4.5.0",
     "jest": "^26.0.1",
     "jest-canvas-mock": "^2.3.0",
     "less": "^3.9.0",
