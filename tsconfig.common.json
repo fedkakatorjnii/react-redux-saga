@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "inlineSourceMap": true,
+    "module": "ES6",
+    "jsx": "react",
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "target": "ES2017",
+    "importHelpers": true,
+    "downlevelIteration": true,
+    "lib": ["es2017", "dom"],
+    "strictPropertyInitialization": true
+  }
+}

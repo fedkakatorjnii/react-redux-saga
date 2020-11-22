@@ -1,0 +1,55 @@
+# Build directories
+
+## Frontend build directory
+/build/
+/lib/
+
+## TypeScript
+*.tsbuildinfo
+
+## NPM packages
+node_modules/
+
+
+# IDEs and editors
+
+## Universal editor configuration
+.editorconfig
+
+## Brackets
+.brackets.json
+
+## PyCharm
+.idea/
+
+## Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+## Visual Studio Code
+.vscode
+*.code-workspace
+
+
+# File managers
+
+## Explorer (Windows)
+Thumbs.db
+
+## Dolphin (KDE)
+.directory
+
+
+# Logs and temporary files
+*.log
+*.pid
+
+
+# Web servers
+
+## Gunicorn
+gunicorn.log
+gunicorn.pid
+start_gunicorn.sh
+stop_gunicorn.sh
+status_gunicorn.sh

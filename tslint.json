@@ -1,0 +1,40 @@
+{
+  "defaultSeverity": "warning",
+  "rules": {
+    "no-namespace": true,
+    "no-reference": true,
+    "forin": true,
+    "no-conditional-assignment": true,
+    "no-debugger": true,
+    "no-duplicate-super": true,
+    "no-duplicate-switch-case": true,
+    "no-dynamic-delete": {
+      "options": true,
+      "severity": "error"
+    },
+    "no-eval": {
+      "options": true,
+      "severity": "error"
+    },
+    "no-object-literal-type-assertion": true,
+    "use-isnan": true,
+    "triple-equals": true,
+    "switch-default": true,
+    "radix": true,
+    "no-var-keyword": true,
+    "no-string-throw": true,
+    "no-string-literal": true,
+    "class-name": true,
+    "comment-format": [true, "check-space"],
+    "interface-over-type-literal": true,
+    "jsdoc-format": true,
+    "newline-before-return": true,
+    "new-parens": true,
+    "no-angle-bracket-type-assertion": true,
+    "switch-final-break": [true, "always"],
+    "type-literal-delimiter": true,
+    "variable-name": [true, "ban-keywords"],
+    "prefer-method-signature": true,
+    "no-default-export": true
+  }
+}
